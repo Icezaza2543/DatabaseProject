@@ -69,7 +69,7 @@ lib/
 
 1. Clone repository:
    ```bash
-   git clone https://github.com/Icezaza2543/DatabaseProject.git
+   git clone https://github.com/Icezaza2543/CPE-DBMS.git
    ```
 2. Install dependencies:
    ```bash
