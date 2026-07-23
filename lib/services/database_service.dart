@@ -1,32 +1,25 @@
 import 'package:flutter/foundation.dart';
-import '../models/student.dart';
+import '../domain/entities/student.dart';
+import '../presentation/providers/database_provider.dart';
 
+/// Legacy Service Alias maintaining backward compatibility with original codebase
 class DatabaseService extends ChangeNotifier {
-  // Mock data for the database
-  List<Student> _students = [
-    Student(id: '64001', name: 'Alice Smith', age: 21, major: 'CPE', gpa: 3.8),
-    Student(id: '64002', name: 'Bob Johnson', age: 22, major: 'SKE', gpa: 3.5),
-    Student(id: '64003', name: 'Charlie Brown', age: 20, major: 'CPE', gpa: 3.2),
-    Student(id: '64004', name: 'Diana Prince', age: 21, major: 'EE', gpa: 3.9),
-  ];
+  final DatabaseProvider _provider = DatabaseProvider();
 
-  List<Student> get students => _students;
+  List<Student> get students => _provider.filteredStudents;
 
   void addStudent(Student student) {
-    _students.add(student);
+    _provider.addStudent(student);
     notifyListeners();
   }
 
   void updateStudent(Student updatedStudent) {
-    final index = _students.indexWhere((s) => s.id == updatedStudent.id);
-    if (index != -1) {
-      _students[index] = updatedStudent;
-      notifyListeners();
-    }
+    _provider.updateStudent(updatedStudent);
+    notifyListeners();
   }
 
   void deleteStudent(String id) {
-    _students.removeWhere((s) => s.id == id);
+    _provider.deleteStudent(id);
     notifyListeners();
   }
 }

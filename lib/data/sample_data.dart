@@ -1,0 +1,205 @@
+import '../domain/entities/student.dart';
+import '../domain/entities/department.dart';
+import '../domain/entities/course.dart';
+import '../domain/entities/enrollment.dart';
+
+class SampleData {
+  static const List<Department> departments = [
+    Department(
+      id: 'DEP_CPE',
+      code: 'CPE',
+      name: 'Computer Engineering',
+      faculty: 'Faculty of Engineering',
+      headOfDepartment: 'Dr. Thanongsak E.',
+    ),
+    Department(
+      id: 'DEP_SKE',
+      code: 'SKE',
+      name: 'Software and Knowledge Engineering',
+      faculty: 'Faculty of Engineering',
+      headOfDepartment: 'Dr. Arnon P.',
+    ),
+    Department(
+      id: 'DEP_EE',
+      code: 'EE',
+      name: 'Electrical Engineering',
+      faculty: 'Faculty of Engineering',
+      headOfDepartment: 'Prof. Somchai K.',
+    ),
+    Department(
+      id: 'DEP_ME',
+      code: 'ME',
+      name: 'Mechanical Engineering',
+      faculty: 'Faculty of Engineering',
+      headOfDepartment: 'Dr. Somsak T.',
+    ),
+    Department(
+      id: 'DEP_CE',
+      code: 'CE',
+      name: 'Civil Engineering',
+      faculty: 'Faculty of Engineering',
+      headOfDepartment: 'Dr. Wanchai N.',
+    ),
+  ];
+
+  static const List<Course> courses = [
+    Course(
+      id: 'CRS_01',
+      code: '01204211',
+      title: 'Database Systems',
+      credits: 3,
+      departmentId: 'DEP_CPE',
+    ),
+    Course(
+      id: 'CRS_02',
+      code: '01204313',
+      title: 'Computer Networks',
+      credits: 3,
+      departmentId: 'DEP_CPE',
+    ),
+    Course(
+      id: 'CRS_03',
+      code: '01204222',
+      title: 'Operating Systems',
+      credits: 3,
+      departmentId: 'DEP_CPE',
+    ),
+    Course(
+      id: 'CRS_04',
+      code: '01204341',
+      title: 'Software Engineering',
+      credits: 3,
+      departmentId: 'DEP_SKE',
+    ),
+    Course(
+      id: 'CRS_05',
+      code: '01205211',
+      title: 'Circuit Analysis',
+      credits: 4,
+      departmentId: 'DEP_EE',
+    ),
+  ];
+
+  static final List<Student> students = [
+    Student(
+      id: '64010001',
+      name: 'Alice Smith',
+      email: 'alice.smith@ku.th',
+      age: 21,
+      departmentId: 'DEP_CPE',
+      major: 'CPE',
+      gpa: 3.85,
+      admissionYear: 2021,
+      status: 'Active',
+    ),
+    Student(
+      id: '64010002',
+      name: 'Bob Johnson',
+      email: 'bob.j@ku.th',
+      age: 22,
+      departmentId: 'DEP_SKE',
+      major: 'SKE',
+      gpa: 3.52,
+      admissionYear: 2021,
+      status: 'Active',
+    ),
+    Student(
+      id: '64010003',
+      name: 'Charlie Brown',
+      email: 'charlie.b@ku.th',
+      age: 20,
+      departmentId: 'DEP_CPE',
+      major: 'CPE',
+      gpa: 3.20,
+      admissionYear: 2022,
+      status: 'Active',
+    ),
+    Student(
+      id: '64010004',
+      name: 'Diana Prince',
+      email: 'diana.p@ku.th',
+      age: 21,
+      departmentId: 'DEP_EE',
+      major: 'EE',
+      gpa: 3.94,
+      admissionYear: 2021,
+      status: 'Active',
+    ),
+    Student(
+      id: '64010005',
+      name: 'Ethan Hunt',
+      email: 'ethan.h@ku.th',
+      age: 22,
+      departmentId: 'DEP_ME',
+      major: 'ME',
+      gpa: 2.88,
+      admissionYear: 2020,
+      status: 'Active',
+    ),
+    Student(
+      id: '64010006',
+      name: 'Fiona Gallagher',
+      email: 'fiona.g@ku.th',
+      age: 21,
+      departmentId: 'DEP_CE',
+      major: 'CE',
+      gpa: 3.65,
+      admissionYear: 2021,
+      status: 'Active',
+    ),
+    Student(
+      id: '64010007',
+      name: 'George Clark',
+      email: 'george.c@ku.th',
+      age: 23,
+      departmentId: 'DEP_CPE',
+      major: 'CPE',
+      gpa: 2.45,
+      admissionYear: 2019,
+      status: 'Probation',
+    ),
+  ];
+
+  static final List<Enrollment> enrollments = [
+    Enrollment(
+      id: 'ENR_01',
+      studentId: '64010001',
+      courseId: 'CRS_01',
+      semester: '2023/1',
+      grade: 'A',
+      gradePoint: 4.0,
+    ),
+    Enrollment(
+      id: 'ENR_02',
+      studentId: '64010001',
+      courseId: 'CRS_02',
+      semester: '2023/1',
+      grade: 'A',
+      gradePoint: 4.0,
+    ),
+    Enrollment(
+      id: 'ENR_03',
+      studentId: '64010002',
+      courseId: 'CRS_04',
+      semester: '2023/1',
+      grade: 'B+',
+      gradePoint: 3.5,
+    ),
+    Enrollment(
+      id: 'ENR_04',
+      studentId: '64010003',
+      courseId: 'CRS_01',
+      semester: '2023/2',
+      grade: 'B',
+      gradePoint: 3.0,
+    ),
+    Enrollment(
+      id: 'ENR_05',
+      studentId: '64010004',
+      courseId: 'CRS_05',
+      semester: '2023/1',
+      grade: 'A',
+      gradePoint: 4.0,
+    ),
+  ];
+}
